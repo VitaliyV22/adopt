@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt Pets</title>
+</head>
+<body>
+    <h1>Available Pets</h1>
+    <ul>
+        {% for pet in pets %}
+        <li>{{ pet.name }} {% if pet.photo_url %}<img src="{{ pet.photo_url }}" alt="{{ pet.name }}">{% endif %} {% if pet.available %}<strong>Available</strong>{% endif %}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_pet') }}">Add a Pet</a>
+</body>
+</html>
